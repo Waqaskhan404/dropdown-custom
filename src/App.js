@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './App.css';
+import "./DropDownBtn.css";
 
 const App = () => {
   const [open, setOpen] = React.useState(false);
@@ -21,14 +21,21 @@ const App = () => {
 
   return (
     <div className="dropdown">
-      <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' onClick={handleOpen}>Edit</button>
+      <button className='text-sm ps-4 py-2.5 text-center items-center inline-block text-gray-500 hover:text-gray-700' onClick={handleOpen}>  <svg
+                    class="inline-block h-6 w-6 fill-current"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 6a2 2 0 110-4 2 2 0 010 4zm0 8a2 2 0 110-4 2 2 0 010 4zm-2 6a2 2 0 104 0 2 2 0 00-4 0z"
+                    />
+                  </svg></button>
       {open ? (
-        <ul className="menu">
-          <li className="menu-item">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleMenuOne}>Edit</button>
+        <ul className="menu space-y-1 shadow-lg flex flex-col items-center border border-gray-300">
+          <li className="menu-item mt-2  border-b-2  hover:bg-gray-500 w-full">
+            <button className="text-black border-none  text-sm px-6 py-2.5 text-center inline-flex items-center " onClick={handleMenuOne}>Edit</button>
           </li>
-          <li className="menu-item">
-            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handleMenuTwo}>Update</button>
+          <li className="menu-item  hover:bg-gray-500 w-full">
+            <button className='text-black border-none  text-sm px-6 py-2.5 text-center inline-flex items-center' onClick={handleMenuTwo}>Update</button>
           </li>
         </ul>
       ) : null}
